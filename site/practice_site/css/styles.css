@@ -1,0 +1,151 @@
+body{
+	font-size: 16px;
+	color: #fff;
+	background-color: #61122f; 
+	font-family: 'Oxygen', sans-serif;
+}
+/*.container-fluid{
+	position: relative;
+}*/
+#header-nav{
+	background-color: #f6b319;
+	border-radius: 0;
+	border:0;
+}
+
+#logo-img{
+	background: url('../images/logo.jpg') no-repeat;
+	background-size: 150px 130px;
+	width: 150px;
+	height: 130px;
+	margin: 10px 15px 10px 0px;
+
+}
+.navbar-brand{
+	padding-top: 0px;
+}
+.navbar-brand h1{
+	color: #557c3e;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: .75;
+	text-shadow: 1px 1px 1px #222;
+}
+.navbar-brand a:hover, .navbar-brand a:focus{
+	text-decoration: none;
+} 
+.navbar-brand p{
+	color: #000;
+	text-transform: uppercase;
+	font-size: .75em;
+	margin-top: 5px;
+}
+#nav-list{
+	margin-top: 5px;
+	font-weight: bold;
+}
+#nav-list a{
+	color: #951c49;
+	text-align: center;
+}
+#nav-list a span{
+	font-size: 1.2em;
+}
+#phone {
+	margin-top: 5px;
+	position: relative;
+	top:20px;
+}
+#phone a{
+	color: #557c3e;
+	text-align:right;
+	padding-bottom: 0;
+}
+#phone div {
+	color: #557c3e;
+	text-align: left;
+	padding-right: 15px;
+	font-size: 0.7em;
+}
+.nav-item{
+	padding-right: 10px;
+}
+#navbarSupportedContent{
+	padding-top: 0px;
+
+}
+button.navbar-toggler .navbar-toggler-icon{
+  border: 1px solid #61122f;
+  outline-color: #61122f;
+}
+button.navbar-toggler{
+	/*clear: both;*/
+	margin-top: -30px;
+}
+
+/* Large Devices */
+@media (min-width: 1200px){
+.navbar-brand {
+	/*margin-top: -60px;*/
+	position: relative; top: -30px;
+		}
+#navbarSupportedContent{
+	position: relative; 
+	top: -70px;
+
+}
+}
+
+/* Medium devices*/
+@media(min-width: 992px) and (max-width: 1199px){
+#logo-img{
+	background: url('../images/logo.jpg') no-repeat;
+	background-size: 100px 80px;
+	width: 100px;
+	height: 80px;
+	margin: 5px 5px 5px 0;
+		}
+.navbar-brand {
+	/*margin-top: -60px;*/
+	position: relative; top: -5px;
+		}
+#navbarSupportedContent{
+	position: relative; 
+	top: -40px;
+
+	}
+}
+/*Small Devices*/
+@media(min-width: 768px) and (max-width: 991px){
+#logo-img{
+	background: url('../images/logo.jpg') no-repeat;
+	background-size: 70px 50px;
+	width: 70px;
+	height: 50px;
+	margin: -13px 3px 3px 0;
+		}
+.navbar-brand h1{
+	font-size: 1.2em;
+		}
+#nav-list a span{
+	font-size: 1em;
+		}
+#navbarSupportedContent{
+	position: relative; 
+	top: -40px;
+
+	}
+}
+/*Extra Small Devices*/
+@media(max-width: 767px){
+.navbar-brand h1{
+	padding-top: 10px;
+	font-size: 5vw;
+}
+.navbar-brand p{
+	font-size: 3vw;
+}
+}
