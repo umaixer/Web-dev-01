@@ -217,6 +217,22 @@ button.navbar-toggler{
 		box-shadow: 0 0 50px #3F0C1F;
 		border: 2px solid #3F0C1F;
 	}
+
+	.panel-footer{
+		margin-bottom: 25px;
+		text-align: center;
+	}
+
+	.panel-footer section:nth-child(3){
+		margin-bottom: 0;
+	}
+
+	.panel-footer section hr{
+		color: #ffff;
+		width:50%;
+		height: 0px;
+		border: 1px solid #ffff;
+	}
 }
 /*Jumbotron END*/
 
@@ -278,3 +294,24 @@ button.navbar-toggler{
 	}
 }
 
+/*Footer*/
+.panel-footer{
+	margin-top: 30px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background-color: #222;
+	border-top: 0;
+	margin-bottom: 0;
+}
+#hours, #address{
+	line-height: 2;
+}
+#hours > span, #address > span{
+	font-size: 1.3em;
+}
+#testimonials{
+	font-style: italic;
+}
+#testimonials p:nth-child(2){
+	margin-top: 20px;
+}
