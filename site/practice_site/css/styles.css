@@ -51,6 +51,9 @@ body{
 	color: #951c49;
 	text-align: center;
 }
+.nav-item{
+	text-align: center;
+}
 #nav-list a span{
 	font-size: 1.2em;
 }
@@ -74,8 +77,7 @@ body{
 	padding-right: 10px;
 }
 #navbarSupportedContent{
-	padding-top: 0px;
-
+	
 }
 button.navbar-toggler .navbar-toggler-icon{
   border: 1px solid #61122f;
@@ -139,13 +141,140 @@ button.navbar-toggler{
 
 	}
 }
+/*End Hearder bar*/
+
+#phone-sm > a{
+	text-align: center;
+	display: block;
+	margin:0 20px;
+	margin-top: 10px;
+	background-color: #f6b319;
+	color: #951c49;
+	border:2px solid white;
+	padding: 10px;
+	font-size: 1.5em;
+	font-weight: bold;
+	border-radius: 4px;
+}
+#sm-deliver{
+	font-size: 0.8em;
+	font-weight: bold;
+	text-align: center;
+}
+
+
+/*HOME PAGE*/
+
+/*Jumbotron*/
+#main-content #jumbotron-id{
+	margin-top: 10px;
+}
 /*Extra Small Devices*/
+
 @media(max-width: 767px){
 .navbar-brand h1{
 	padding-top: 10px;
-	font-size: 5vw;
+	font-size: 4vw;
 }
 .navbar-brand p{
-	font-size: 3vw;
+	font-size: 2vw;
 }
 }
+@media(min-width: 576px) and (max-width: 767px){
+.navbar-expand-md .container{
+		padding-right: 15px!important;
+		padding-left: 15px!important;
+	}
+}
+@media(min-width: 1200px){
+	.jumbotron{
+		background: url(../images/jumbotron_1200.jpg) no-repeat;
+		height: 675px;
+		box-shadow: 0 0 50px #3F0C1F;
+		border: 2px solid #3F0C1F;
+	}
+}
+@media(min-width: 992px) and (max-width: 1199px){
+	.jumbotron{
+		background: url(../images/jumbotron_992.jpg) no-repeat;
+		height: 558px;
+		box-shadow: 0 0 50px #3F0C1F;
+		border: 2px solid #3F0C1F;
+}
+}
+@media(min-width: 768px) and (max-width: 991px){
+	.jumbotron{
+		background: url(../images/jumbotron_768.jpg) no-repeat;
+		height: 432px;
+		box-shadow: 0 0 50px #3F0C1F;
+		border: 2px solid #3F0C1F;
+}
+}
+@media(max-width: 767px){
+	.container .jumbotron{
+		padding: 0;
+		margin-top: 30px;
+		box-shadow: 0 0 50px #3F0C1F;
+		border: 2px solid #3F0C1F;
+	}
+}
+/*Jumbotron END*/
+
+#menu-tile, #specials-tile, #map-tile{
+	height: 250px;
+	width: 100%;
+	margin-bottom: 15px;
+	position: relative;
+	border: 2px solid #3F0C1F;
+	overflow: hidden;
+}
+#menu-tile:hover, #specials-tile:hover, #map-tile:hover{
+	box-shadow: 0 1px 5px 1px #cccccc
+}
+
+#menu-tile{
+	background: url(../images/menu-tile.jpg) no-repeat;
+	background-position: center;
+}
+#specials-tile{
+	background: url(../images/specials-tile.jpg) no-repeat;
+	background-position: center;
+}
+
+#menu-tile span, #specials-tile span, #map-tile span{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 1.6em;
+	text-transform: uppercase;
+	background-color: #000;
+	color: #fff;
+	opacity: 0.8;
+}
+
+@media(max-width: 767px){
+	#menu-tile, #specials-tile, #map-tile{
+		width: 360px;
+		margin: 0 auto 15px auto;
+	}
+}
+@media(max-width: 410px){
+	#menu-tile, #specials-tile, #map-tile{
+		width: 280px;
+		margin: 0 auto 15px auto;
+	}
+	.navbar-brand h1{
+		padding-top: 5px;
+		font-size: 5vw;
+	}
+	#navbar-button{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		margin-bottom: 5px;
+		margin-right: 10px;
+	}
+}
+

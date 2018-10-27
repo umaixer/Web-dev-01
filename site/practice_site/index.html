@@ -13,7 +13,7 @@
 <body>
 <header>
 	<nav id="header-nav" class="navbar navbar-expand-md navbar-light">
-		<div class="container">
+		<div id="top-navbar" class="container">
 			
 				<a href="index.html" class="float-left d-none d-md-block">
 					<div id="logo-img" alt="Logo image"></div>
@@ -24,7 +24,7 @@
 						<span>health code certified</span>
 					</p>
 				</div>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" id="navbar-button" aria-expanded="false" aria-label="Toggle navigation">
     				<span class="navbar-toggler-icon"></span>
   				</button>
 		
@@ -50,7 +50,7 @@
 							class="hidden-xs">Awards
 						</a>
 					</li>
-					<li id="phone" class="hidden-xs">
+					<li id="phone" class="d-none d-md-block">
 						<a href="tel:306-209-2819">
 							<span>306-209-2819</span>
 						</a><div>* We Deliver Free</div>
@@ -62,6 +62,39 @@
 		</div>
 	</nav>
 </header>
+
+<div id=phone-sm class="d-md-none">		
+	<a href="tel:306-209-2819">
+							<span>306-209-2819</span>
+						</a></div>
+						<div id="sm-deliver" class="d-md-none">* We Deliver Free</div>
+	
+
+
+<div id="main-content" class="container">
+	<div class="jumbotron" id="jumbotron-id">
+		<img src="images/jumbotron_768.jpg" alt="Restaurant Picture" class="img-fluid d-md-none">
+	</div>
+
+
+	<div id="home-tiles" class="row">
+		<div class="col-lg-4 col-md-6 col-sm-12">
+			<a href="menu-cat.html"><div id="menu-tile"> <span>menu</span></div></a>
+		</div>
+		<div class="col-lg-4 col-md-6 col-sm-12">
+			<a href="specials.html"><div id="specials-tile"> <span>specials</span></div></a>
+		</div>
+		<div class="col-lg-4 col-md-12 col-sm-12">
+			<a href="https://goo.gl/maps/jAoF1AhQRP72" target="_blank">
+				<div id="map-tile">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2542.374564054108!2d-104.59070148426991!3d50.41549257947065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x531ea090798fa7ab%3A0x47e1c32f9f870c24!2sUniversity+of+Regina!5e0!3m2!1sen!2sca!4v1540591308032" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+					<span>map</span>
+				</div>
+			</a>
+		</div>
+	</div>
+
+</div>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/script.js"></script>
