@@ -355,7 +355,8 @@ button.navbar-toggler{
 	box-shadow: 0 1px 5px 1px #cccccc
 }
 #menu-cat-title{
-	margin-bottom: 50px;
+	margin-bottom: 30px;
+	margin-top: 20px;
 	text-align: center;
 }
 
@@ -364,6 +365,7 @@ button.navbar-toggler{
 /*Single Category Page*/
 #menu-item-title{
 	margin-bottom: 40px;
+	margin-top: 20px;
 }
 .menu-item-tile{
 	margin-bottom: 25px;
