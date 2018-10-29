@@ -11,6 +11,7 @@ body{
 	background-color: #f6b319;
 	border-radius: 0;
 	border:0;
+	margin-bottom: 20px;
 }
 
 #logo-img{
@@ -174,7 +175,7 @@ button.navbar-toggler{
 @media(max-width: 767px){
 .navbar-brand h1{
 	padding-top: 10px;
-	font-size: 4vw;
+	font-size: 4.5vw;
 }
 .navbar-brand p{
 	font-size: 2vw;
@@ -217,7 +218,9 @@ button.navbar-toggler{
 		box-shadow: 0 0 50px #3F0C1F;
 		border: 2px solid #3F0C1F;
 	}
+/*Jumbotron END*/
 
+/*Footer*/
 	.panel-footer{
 		margin-bottom: 25px;
 		text-align: center;
@@ -233,8 +236,18 @@ button.navbar-toggler{
 		height: 0px;
 		border: 1px solid #ffff;
 	}
+	/*Footer End*/
+
+	/*Menu-item-photo*/
+	.menu-item-photo{
+		margin: auto;
+	}
+	.menu-item-description{
+		text-align: center;
+	}
+
 }
-/*Jumbotron END*/
+
 
 #menu-tile, #specials-tile, #map-tile{
 	height: 250px;
@@ -342,7 +355,52 @@ button.navbar-toggler{
 	box-shadow: 0 1px 5px 1px #cccccc
 }
 #menu-cat-title{
-	margin-top: 20px;
 	margin-bottom: 50px;
 	text-align: center;
+}
+
+/*Menu Categories end*/
+
+/*Single Category Page*/
+#menu-item-title{
+	margin-bottom: 40px;
+}
+.menu-item-tile{
+	margin-bottom: 25px;
+}
+.menu-item-tile hr{
+		color: #ffff;
+		width:80%;
+		height: 0px;
+		border: 1px solid #ffff;
+}
+.menu-item-tile .menu-item-price{
+	font-size: 1.2em;
+}
+.menu-item-tile .menu-item-price span{
+	font-size: 0.6em;
+}
+.menu-item-photo{
+	position: relative;
+	border: 2px solid #3F0C1F;
+	overflow: hidden;
+	/*margin-right: -15px;*/
+	margin-left: auto;
+	padding-top: 0;
+	max-width: 250px;
+}
+.menu-item-photo div{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	text-align: center;
+	background-color: #557c3e;
+	width: 50px;
+}
+.menu-item-description{
+	padding-right: 30px;
+}
+.menu-item-description p{
+	font-size: 0.9em;
+	font-style: italic;
 }
