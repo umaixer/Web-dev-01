@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded",function (event) {
 	
 
 		$ajaxUtils.sendGetRequest("data/info.json", function (res) {
+			console.log(res);
 			var message = "Name: " + res.firstName + " " + res.lastName + "\n" +
 							"Profession: " + res.rofession ;
 				document.querySelector("#content").innerHTML= "<h2>" + message + "</h2>";
