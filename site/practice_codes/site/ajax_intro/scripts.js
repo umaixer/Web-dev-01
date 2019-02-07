@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded",function (event) {
 		$ajaxUtils.sendGetRequest("data/info.json", function (res) {
 			console.log(res.firstName);
 			var message = "Name: " + res.firstName + " " + res.lastName + "\n" +
-							"Profession: " + res.rofession ;
+							"Profession: " + res.profession ;
 				document.querySelector("#content").innerHTML= "<h2>" + message + "</h2>";
 		});
 	
