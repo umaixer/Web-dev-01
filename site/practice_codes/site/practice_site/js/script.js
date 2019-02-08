@@ -27,6 +27,12 @@ var showLoading = function (selector) {
 	insertHTML(selector, html);
 };
 
+var inserProperty = function (string, propName, propValue) {
+	var propToReplace = "{{" + propName + "}}";
+	string = string.replace(new RegExp(propToReplace, "g"),propValue);
+	return string;
+};
+
 document.addEventListener("DOMContentLoaded", function (event) {
 	showLoading("#main-content");
 
@@ -35,6 +41,40 @@ document.addEventListener("DOMContentLoaded", function (event) {
 			document.querySelector("#main-content").innerHTML = responseText;
 		}, false);
 });
+
+ub.loadMenuCategories=function () {
+	showLoading("#main-content");
+	$ajaxUtils.sendGetRequest(allCategoriesUrl, buildAndShowCategoriesHTML);
+
+};
+
+function buildAndShowCategoriesHTML(categories) {
+	$ajaxUtils.sendGetRequest(categoriesTitleHtml, function (categoriesTitleHtml) {
+		$ajaxUtils.sendGetRequest(categoryHtml, function (categoryHtml) {
+			var categoriesViewHTML = buildcategoriesViewHTML
+			(categories,categoriesTitleHtml,categoryHtml);
+			insertHTML("main-content",categoriesViewHTML);
+		}, false);
+	}, false);
+}
+
+function buildcategoriesViewHTML(categories,categoriesTitleHtml,categoryHtml) {
+	var finalHTML= categoriesTitleHtml;
+	finalHTML += "<section class='row'>";
+
+	for (var i = 0; i < categories.length; i++) {
+
+		var html = categoryHtml;
+		var name = "" + categories[i].name;
+		var short_name = categories[i].short_name;
+
+		html= insertHTML(html,"name", name);
+		html= insertHTML(html,"short_name", short_name);
+		finalHTML += html;
+	}
+	finalHTML += "</section>";
+	return finalHTML;
+}
 
 global.$ub = ub;
 
