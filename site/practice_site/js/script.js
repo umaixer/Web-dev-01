@@ -68,8 +68,8 @@ function buildcategoriesViewHTML(categories,categoriesTitleHtml,categoryHtml) {
 		var name = "" + categories[i].name;
 		var short_name = categories[i].short_name;
 
-		html= insertHTML(html,"name", name);
-		html= insertHTML(html,"short_name", short_name);
+		html= inserProperty(html,"name", name);
+		html= inserProperty(html,"short_name", short_name);
 		finalHTML += html;
 	}
 	finalHTML += "</section>";
