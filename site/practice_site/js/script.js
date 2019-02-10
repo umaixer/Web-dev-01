@@ -15,6 +15,10 @@ var homeHTML = "snippets/home-snippet.html";
 var allCategoriesUrl= "https://davids-restaurant.herokuapp.com/categories.json";
 var categoriesTitleHtml= "snippets/categories-title-snippet.html";
 var categoryHtml = "snippets/category-snippet.html";
+var menuItemsUrl = "https://davids-restaurant.herokuapp.com/menu_items.json?category=";
+var menuItemsTitleHtml = "snippets/menu-items-title.html";
+var menuItemHtml = "snippets/menu-item.html";
+
 
 var insertHTML = function (selector, html) {
 	var targetElem = document.querySelector(selector);
@@ -48,6 +52,12 @@ ub.loadMenuCategories=function () {
 
 };
 
+ub.loadMenuItems=function (categoryShort) {
+	showLoading("#main-content");
+	$ajaxUtils.sendGetRequest(menuItemsUrl + categoryshort, buildAndShowMenuItemsHTML);
+
+};
+
 function buildAndShowCategoriesHTML(categories) {
 	$ajaxUtils.sendGetRequest(categoriesTitleHtml, function (categoriesTitleHtml) {
 		$ajaxUtils.sendGetRequest(categoryHtml, function (categoryHtml) {
@@ -76,6 +86,85 @@ function buildcategoriesViewHTML(categories,categoriesTitleHtml,categoryHtml) {
 	return finalHTML;
 }
 
+function buildAndShowMenuItemsHTML (categoryMenuItems){
+	$ajaxUtils.sendGetRequest(menuItemsTitleHtml, function (menuItemsTitleHtml) {
+		$ajaxUtils.sendGetRequest(menuItemHtml, function (menuItemHtml) {
+			var menuItemsViewHTML = buildMenuItemsViewHTML
+			(categoryMenuItems,menuItemsTitleHtml,menuItemHtml);
+			insertHTML("#main-content",menuItemsViewHTML);
+		}, false);
+	}, false);
+}
+
+function buildMenuItemsViewHTML (categoryMenuItems,menuItemsTitleHtml,
+								menuItemHtml) {
+	
+	menuItemsTitleHtml = inserProperty(menuItemsTitleHtml,"name", 
+								categoryMenuItems.category.name);
+	menuItemsTitleHtml = inserProperty(menuItemsTitleHtml,
+								"special_instructions", 
+					categoryMenuItems.category.special_instructions);
+
+	var finalHTML =menuItemsTitleHtml;
+	finalHTML += "<section class='row'>";
+
+	var menuItems = categoryMenuItems.menu_items;
+	var catShortName = categoryMenuItems.category.short_name;
+
+	for (var i = 0; i < menuItems.length; i++) {
+
+		var html = menuItemHtml;
+		html = inserProperty(html, "short_name", menuItems[i].short_name);
+		html = inserProperty(html, "catShortName", catShortName);
+		html = insertItemPrice(html, "price_small", 
+			menuItems[i].price_small);
+		html = insertItemPortionName(html, "small_portion_name", 
+			menu_items[i].small_portion_name);
+		html = insertItemPrice(html, "price_large", 
+			menu_items[i].price_large);
+		html = insertItemPortionName(html, "large_portion_name",
+			menu_items[i].large_portion_name);
+		html = inserProperty(html, "name", menuItems[i].name);
+		html = inserProperty(html, "description", 
+			menuItems[i].description);
+
+		finalHTML += html;
+
+	}
+
+	finalHTML += "</section>";
+
+	return finalHTML;
+
+}
+
+function insertItemPrice (html, pricePropName, priceValue) {
+	
+	if (!priceValue) {
+		return inserProperty(html, pricePropName, "");
+	}
+
+	priceValue = "$" +priceValue.toFixed(2);
+	inserProperty (html, pricePropName, priceValue);
+}
+
+function insertItemPortionName(html,
+                               portionPropName,
+                               portionValue) {
+  // If not specified, return original string
+  if (!portionValue) {
+    return inserProperty(html, portionPropName, "");
+  }
+
+  portionValue = "(" + portionValue + ")";
+  html = inserProperty(html, portionPropName, portionValue);
+  return html;
+}
+
+
+
+
+}
 global.$ub = ub;
 
 })(window);
