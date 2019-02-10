@@ -124,11 +124,11 @@ function buildMenuItemsViewHTML (categoryMenuItems,menuItemsTitleHtml,
 		html = insertItemPrice(html, "price_small", 
 			menuItems[i].price_small);
 		html = insertItemPortionName(html, "small_portion_name", 
-			menu_Items[i].small_portion_name);
+			menuItems[i].small_portion_name);
 		html = insertItemPrice(html, "price_large", 
-			menu_Items[i].price_large);
+			menuItems[i].price_large);
 		html = insertItemPortionName(html, "large_portion_name",
-			menu_Items[i].large_portion_name);
+			menuItems[i].large_portion_name);
 		html = inserProperty(html, "name", menuItems[i].name);
 		html = inserProperty(html, "description", 
 			menuItems[i].description);
