@@ -152,7 +152,8 @@ function insertItemPrice (html, pricePropName, priceValue) {
 	}
 
 	priceValue = "$" +priceValue.toFixed(2);
-	inserProperty (html, pricePropName, priceValue);
+	html = inserProperty (html, pricePropName, priceValue);
+	return html;
 }
 
 function insertItemPortionName(html,
