@@ -54,7 +54,8 @@ ub.loadMenuCategories=function () {
 
 ub.loadMenuItems=function (categoryShort) {
 	showLoading("#main-content");
-	$ajaxUtils.sendGetRequest(menuItemsUrl + categoryshort, buildAndShowMenuItemsHTML);
+	$ajaxUtils.sendGetRequest(menuItemsUrl + categoryShort, 
+		buildAndShowMenuItemsHTML);
 
 };
 
@@ -68,7 +69,8 @@ function buildAndShowCategoriesHTML(categories) {
 	}, false);
 }
 
-function buildcategoriesViewHTML(categories,categoriesTitleHtml,categoryHtml) {
+function buildcategoriesViewHTML(categories,categoriesTitleHtml,
+	categoryHtml) {
 	var finalHTML= categoriesTitleHtml;
 	finalHTML += "<section class='row'>";
 
@@ -87,8 +89,10 @@ function buildcategoriesViewHTML(categories,categoriesTitleHtml,categoryHtml) {
 }
 
 function buildAndShowMenuItemsHTML (categoryMenuItems){
-	$ajaxUtils.sendGetRequest(menuItemsTitleHtml, function (menuItemsTitleHtml) {
-		$ajaxUtils.sendGetRequest(menuItemHtml, function (menuItemHtml) {
+	$ajaxUtils.sendGetRequest(menuItemsTitleHtml, 
+		function (menuItemsTitleHtml) {
+		$ajaxUtils.sendGetRequest(menuItemHtml, 
+			function (menuItemHtml) {
 			var menuItemsViewHTML = buildMenuItemsViewHTML
 			(categoryMenuItems,menuItemsTitleHtml,menuItemHtml);
 			insertHTML("#main-content",menuItemsViewHTML);
@@ -114,7 +118,8 @@ function buildMenuItemsViewHTML (categoryMenuItems,menuItemsTitleHtml,
 	for (var i = 0; i < menuItems.length; i++) {
 
 		var html = menuItemHtml;
-		html = inserProperty(html, "short_name", menuItems[i].short_name);
+		html = inserProperty(html, "short_name", 
+			menuItems[i].short_name);
 		html = inserProperty(html, "catShortName", catShortName);
 		html = insertItemPrice(html, "price_small", 
 			menuItems[i].price_small);
@@ -127,6 +132,8 @@ function buildMenuItemsViewHTML (categoryMenuItems,menuItemsTitleHtml,
 		html = inserProperty(html, "name", menuItems[i].name);
 		html = inserProperty(html, "description", 
 			menuItems[i].description);
+
+
 
 		finalHTML += html;
 
@@ -163,8 +170,6 @@ function insertItemPortionName(html,
 
 
 
-
-}
 global.$ub = ub;
 
 })(window);
