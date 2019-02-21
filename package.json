@@ -1,0 +1,24 @@
+{
+  "name": "web-dev-01",
+  "version": "1.0.0",
+  "description": "Coursera Full Stack Web",
+  "main": "index.html",
+  "scripts": {
+    "start":"npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite":"lite-server"  
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umaixer/Web-dev-01.git"
+  },
+  "author": "Umair Aslam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/umaixer/Web-dev-01/issues"
+  },
+  "homepage": "https://github.com/umaixer/Web-dev-01#readme",
+  "devDependencies": {
+    "lite-server": "^2.4.0"
+  }
+}
