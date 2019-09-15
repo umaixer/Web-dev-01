@@ -19,7 +19,10 @@
   },
   "homepage": "https://github.com/umaixer/Web-dev-01#readme",
   "devDependencies": {
-    "lite-server": "^2.4.0"
+    "lite-server": "^2.5.4"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "keywords": [
+    "web-dev"
+  ]
 }
